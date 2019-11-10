@@ -1,6 +1,7 @@
 import React from "react";
 import {CharacterList} from "./components/character-list/character-list";
 import {getAllData} from "./utils/fetchAll";
+import './styles.css';
 
 export default class App extends React.Component{
 
@@ -30,7 +31,7 @@ export default class App extends React.Component{
 			let obj = {};
 			response.map(function(res){
 				obj[res.url] = res.name
-				localStorage.setItem('episodes',JSON.stringify(obj))
+				return localStorage.setItem('episodes',JSON.stringify(obj))
 			})
 		})
 		.catch(error=>{
