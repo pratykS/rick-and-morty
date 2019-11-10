@@ -26,7 +26,7 @@ export class CharacterCard extends React.Component{
 
     render(){
 
-	const {image,name,species,status,location,id,episode} = this.props.character;
+	const {image,name,species,status,location,episode} = this.props.character;
 
 	let episodes = JSON.parse(localStorage.getItem('episodes'));
 
