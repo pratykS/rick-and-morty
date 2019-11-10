@@ -1,0 +1,46 @@
+.character {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4rem 0rem;
+  width: 100%;
+  }
+
+  img {
+    border-radius: 50%;
+    /* box-shadow: 5px 5px 10px black; */
+    max-width: 50%;
+    max-height: 30%;
+    border: 5px solid #00c5ba;
+    position: relative;
+    bottom: 50px;
+  }
+  img:hover{
+    transform: scale(1.1);
+  }
+  
+  .character-content {
+    border-radius: 8px;
+    background-color: #000000;
+    box-shadow: 5px 5px 10px black;
+    color:#00c5ba;
+    padding:5px;
+    height: 100%;
+    width: 70%;
+  }
+
+  .episodesTag{
+    /* background: #b91313; */
+    background: linear-gradient(to right, #b56da8, #8e5082);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  .episodeCount{
+    background: #FB830A;
+    padding:5px;
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+  }
