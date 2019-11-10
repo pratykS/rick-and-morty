@@ -15,5 +15,3 @@ export const getAllData = async (url, data, resolve, reject) => {
       reject('Something wrong. Please refresh the page and try again.')
     }
 }
-
-

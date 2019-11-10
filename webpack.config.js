@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: {
-    app: ['react-hot-loader/patch', './src/index.js'],
+  entry:{
+    app:['react-hot-loader/patch', './src/index.js']
   },
   output: {
     publicPath: '/',
+    path: path.join(__dirname,"/dist"),
     filename: 'js/[name].js',
   },
   plugins: [

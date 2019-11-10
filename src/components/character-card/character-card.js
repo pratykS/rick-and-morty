@@ -22,10 +22,10 @@ export class CharacterCard extends React.Component{
 
     render(){
 
-	let episodes = this.props.chapter;
+	const episodes = this.props.chapter;
 	const {image,name,species,status,location,episode} = this.props.character;
 	
-	let episodeFeatured = episode.map(function(eps){
+	const episodeFeatured = episode.map(function(eps){
 		return episodes[eps];
 	});
 

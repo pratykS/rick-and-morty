@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.config');
-const open = require('open');
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import config, { output } from './webpack.config';
+import open from 'open';
 
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -11,7 +11,7 @@ const targetEntry = `http://localhost:${portNumber}/`;
 
 new WebpackDevServer(webpack(config), {
   stats: { colors: true },
-  publicPath: config.output.publicPath,
+  publicPath: output.publicPath,
   hot: true,
   historyApiFallback: true,
   contentBase: 'dist',
