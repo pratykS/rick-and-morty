@@ -1,29 +1,6 @@
 import React from "react";
 import {CharacterList} from "./components/character-list/character-list";
-import {getPlanets, getAllData} from "./utils/fetchAll";
-
-// function App() {
-//   let [data, setData] = useState([]);
-//   let url = "https://rickandmortyapi.com/api/character/";
-//   useEffect(() => {
-//     axios
-//       .get(url)
-//       .then(res => {
-//         setData(res.data.results);
-//       })
-//       .catch(err => {
-//         console.log(err);
-//       });
-//   }, []);
-
-//   return (
-//     <div className="App">
-//       <h1>Rick & Morty Characters</h1>
-//       <CharacterList characterData={data} />
-//     </div>
-//   );
-// }
-
+import {getAllData} from "./utils/fetchAll";
 
 export default class App extends React.Component{
 
@@ -33,20 +10,6 @@ export default class App extends React.Component{
 			data:[]
 		}
 	}
-	
-	// async componentDidMount(){
-	// 	const urlChar = "https://rickandmortyapi.com/api/character";
-
-	// 	let responseCharacter = await fetch(urlChar);
-	// 	if(responseCharacter.ok){
-	// 		let characterData = await responseCharacter.json();
-	// 		this.setState({data:characterData.results})
-	// 	}else{
-	// 		console.log('HTTPS ERROR')
-	// 	}		
-
-	// }
-
 
 	componentDidMount() {
 
@@ -65,7 +28,6 @@ export default class App extends React.Component{
 		})
 		.then(response=>{
 			let obj = {};
-			console.log(response);
 			response.map(function(res){
 				obj[res.url] = res.name
 				localStorage.setItem('episodes',JSON.stringify(obj))
