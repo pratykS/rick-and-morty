@@ -6,7 +6,7 @@ export class CharacterList extends React.Component{
         return (
             <div className="characters">
               {this.props.characterData.map(character => {
-                return <CharacterCard character={character} key={character.id}/>;
+                return <CharacterCard character={character} chapter={this.props.episodeData} key={character.id}/>;
               })}
             </div>
           );

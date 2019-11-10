@@ -13,26 +13,21 @@ export class CharacterCard extends React.Component{
 	}
 	
 	handleClick(){
-		if(localStorage.getItem('episodes')){
-			if(this.state.showEpisodesFeatured){
-				this.setState({showEpisodesFeatured:false})
-			}else{
-				this.setState({showEpisodesFeatured:true})
-			}
+		if(this.state.showEpisodesFeatured){
+			this.setState({showEpisodesFeatured:false})
 		}else{
-			console.log('Refresh the browser , LocalStorage Items deleted !!')
+			this.setState({showEpisodesFeatured:true})
 		}	
 	}
 
     render(){
 
+	let episodes = this.props.chapter;
 	const {image,name,species,status,location,episode} = this.props.character;
-
-	let episodes = JSON.parse(localStorage.getItem('episodes'));
-
+	
 	let episodeFeatured = episode.map(function(eps){
 		return episodes[eps];
-	})
+	});
 
     return (
             <div className="character">

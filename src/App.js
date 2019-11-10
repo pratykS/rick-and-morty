@@ -8,7 +8,8 @@ export default class App extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			data:[]
+			characters:[],
+			episodes:[]
 		}
 	}
 
@@ -18,7 +19,7 @@ export default class App extends React.Component{
 			getAllData('https://rickandmortyapi.com/api/character', [], resolve, reject)
 		})
 		.then(response=>{
-			this.setState({data:response});
+			this.setState({characters:response});
 		})
 		.catch(error=>{
 			console.log('HTTPS ERROR',error);
@@ -28,11 +29,15 @@ export default class App extends React.Component{
 			getAllData('https://rickandmortyapi.com/api/episode', [], resolve, reject)
 		})
 		.then(response=>{
+
 			let obj = {};
-			response.map(function(res){
-				obj[res.url] = res.name
-				return localStorage.setItem('episodes',JSON.stringify(obj))
-			})
+			setTimeout(function(){
+				for(let i=0;i<response.length;i++){
+					obj[response[i].url] = response[i].name
+				};
+			},0);
+
+			this.setState({episodes:obj});
 		})
 		.catch(error=>{
 			console.log('HTTPS ERROR',error);
@@ -41,11 +46,11 @@ export default class App extends React.Component{
 
 
 	render(){
-		const {data} = this.state;
+		const {characters,episodes} = this.state;
 		return (
 			<div className="container">
 			  <h1>Rick & Morty Characters</h1>
-			  <CharacterList characterData={data}/>
+			  <CharacterList characterData={characters} episodeData={episodes}/>
 			</div>
 		  );
 	}
